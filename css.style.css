@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/*layout*/
+
+[class*="_cover"] {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+[class*="_cover"] {
+  height: inherit;
+}
+/*#header*/
+#header {
+  width: 100%;
+  height: 90px;
+  position: relative;
+}
+#header .logo {
+  width: 10%;
+  background-color: gray;
+  height: 100%;
+}
+#header .nav {
+    
+}
+#header .gnb {
+
+}
