@@ -40,13 +40,36 @@ $(function () {
    * 시간마다 일시키는 timer
    * 애니메이션효과를 갖고있는 slide
    ***/
-  var i = 0,
+    var i = 0,
     k = null,
     repeat;
-  function timer() {}
-  function slide() {
-    //$(".white_box").css("left", "-100%").stop().animate({ left: 0 }, 1000);
-    $(".slide_cover ul li").eq(0).addClass("on");
+    timer();
+    function timer() {
+    setInterval(function(){
+      i++;
+      k=i-1;
+      if(i==3){
+        i=0;
+      }
+      
+      slide();
+    },2000);
   }
-  slide();
+  
+  function slide() {
+    //-100%->0->100%
+    // $(".white_box").css("left", "-100%").stop().animate({ left: "0%" }, 1000,function(){
+    //   $(".white_box").stop().animate({left:"100%"},1000)
+    // });
+		$(".slide_cover ul li").eq(i).addClass("on");
+		$(".slide_cover ul li").eq(k).removeClass("on");
+		$(".slide_cover ul li").eq(i).find(".img_logo").addClass("on");
+		$(".slide_cover ul li").eq(i).find(".img_text").addClass("on");
+		$(".slide_cover ul li").eq(i).find(".box").addClass("on");
+		$(".slide_cover ul li").eq(i).find("a img").addClass("on");
+		$(".slide_cover ul li a img").removeClass("on");	
+    console.log("i="+i+"k="+k)
+    //$(".slide_cover ul li").eq(i).find("a > h2.img_logo").addClass("on");
+  }
+  
 }); //jQuery
